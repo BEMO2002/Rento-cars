@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="shortcut icon" href="assets/home/buyCarIcon.eeb2e066.svg" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/input.css">
+    <link rel="stylesheet" href="dist/output.css">
+    <title>Rento Cars</title>
+</head>
+
+<body>
+    <!-- start header of Navbar -->
+    <header>
+        <div class="lg mx-auto">
+            <!--  start desk nav -->
+            <nav class="bg-secondary  flex flex-row justify-between p-[15px] lg  ">
+                <div class="mr-0 lg:mr-[40px] w-[160px] lg:w-[190px]">
+                    <a href="index.html" class="flex items-center gap-3 mt-1">
+                        <img src="Assets/home/buyCarIcon.eeb2e066.svg" alt="" class="lg:w-[50px] w-[40px] mb-1">
+                        <h2 class="font-bold text-4xl text-center text-white">RENTO</h2>
+                    </a>
+                </div>
+                <div class="text-center mt-2 hidden xl:flex">
+                    <ul class="flex flex-row items-center justify-center  gap-20 font-semibold">
+                        <li>
+                            <a href="index.html" class="link text-white hover:text-primary transition-all">Home</a>
+                        </li>
+                        <li>
+                            <a href="why.html" class="link text-white hover:text-primary transition-all">Why Reto?</a>
+                        </li>
+                        <li>
+                            <a href="export.html" class="link text-white hover:text-primary transition-all">Export</a>
+                        </li>
+                        <li>
+                            <a href="faq.html" class="link text-white hover:text-primary transition-all">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="post ad.html" class="link text-white hover:text-primary transition-all">Post Ad</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class=" hidden lg:flex  lg:flex-row relative gap-y-4 items-center">
+                    <input  type="text" placeholder="search for your car"
+                        class="search rounded-full bg-transparent w-full h-[50px]  border border-assent outline-none pl-[160px] pr-[70px] placeholder:text-white text-white placeholder:font-semibold ">
+                    <button
+                        class=" rounded-full rounded-r-none  flex items-center justify-center translate-all  h-[50px] px-[25px] bg-assent text-secondary md:absolute left-0">
+                        <i class="ri-search-line text-2xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex items-center justify-center  lg:mr-9 mr-0 ">
+                    <div id="userMenu" class="hidden">
+                        <button id="userMenuBtn" class="bg-assent p-2 rounded-full pl-5 pr-5 font-semibold text-primary">
+                            <i class="ri-user-line bg- text-black font-normal p-1 border rounded-full"></i>
+                            <span id="userName">User</span>
+                            <i class="ri-menu-4-line"></i>
+                        </button>
+                        <div id="userDropdown" class="hidden absolute bg-white mt-2 py-2 w-48 rounded-lg shadow-xl z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                            <hr class="my-1">
+                            <a href="#" id="logoutBtn" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Logout</a>
+                        </div>
+                    </div>
+                    <a href="auth.html" id="loginBtn" class="bg-assent p-2 rounded-full pl-5 pr-5 font-semibold text-primary">
+                        <i class="ri-user-line bg- text-black font-normal p-1 border rounded-full"></i>
+                        Sign in
+                    </a>
+                </div>
+            </nav>
+            <!-- end desk nav -->
+            <!-- mobile nav -->
+            <nav
+                class="view bg-[#fff] fixed w-[300px] left-0 top-0 h-screen  shadow-2xl  transition-all duration-300 z-20">
+                <div
+                    class="close-btn bg-secondary w-10 h-10  relative -right-full top-36 flex justify-center items-center rounded-tr-lg rounded-br-lg cursor-pointer transition-all">
+                    <i class=" close-btn-icon ri-roadster-fill text-2xl text-white"></i>
+                </div>
+                <!-- logo -->
+                <div class="px-2 flex flex-col  h-full">
+                    <a href="#">
+                        <h2 class="font-bold text-5xl text-center text-secondary">RENTO</h2>
+                    </a>
+                    <hr>
+                    <div class=" flex items-center justify-center space-x-4 mt-7 bg-assent px-2 py-3 rounded-xl">
+                        <div>
+                            <i class="ri-user-line bg-white text-black font-normal p-4 text-xl border rounded-full"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <a href="" class="font-semibold text-xl">Sign in </a>
+                            <p class="text-[15px]">Don't have an account?</p>
+                            <a href="" class="text-primary">Sign Up</a>
+                        </div>
+                    </div>
+                    <!-- list -->
+                    <ul class=" flex flex-col  gap-y-10 pt-10 font-semibold ml-4 mb-2">
+                        <li class="flex items-center gap-4 justify-start">
+                            <img src="Assets/home/buyCarIcon.eeb2e066.svg" alt="">
+                            <a href="rent.html" class="link">Browse All Cars</a>
+                        </li>
+                        <li class="flex items-center gap-4 justify-start">
+                            <img src="Assets/home/sellCarIcon.35d865ce.svg" alt="">
+                            <a href="why.html" class="link">Why Rento?</a>
+                        </li>
+                        <li class="flex items-center gap-4 justify-start">
+                            <img src="Assets/home/FAQsIcon.f22b2925.svg" alt="">
+                            <a href="faq.html" class="link">FAQs</a>
+                        </li>
+                        <li class="flex items-center gap-4 justify-start">
+                            <img src="Assets/home/FinanceLogo.f5ba3d67.svg" alt="">
+                            <a href="export.html" class="link">Export</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="flex flex-col  items-center mt-8 gap-4">
+                        <a href="" class="px-20 py-3 bg-primary rounded-lg text-white font-bold text-xl">Rent A Car</a>
+                        <!-- <a href="rent.html" class="px-16 py-3 bg-secondary rounded-lg text-white font-bold text-xl">choose A -->
+                            <!-- Car</a> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- end header of Navbar -->
+    <!-- start top button -->
+    <button
+        class="to  p-[15px]  bg-secondary text-[#fff] border rounded-md  font-bold fixed right-[10px] bottom-[20px] z-10 ">
+        <i class="ri-arrow-up-double-line text-xl"></i>
+    </button>
+    <!-- end top button -->
+    <!--start loading page -->
+    <div id="loading" class="flex items-center justify-center top-0 left-0 z-50   fixed w-[100%] h-[100%] bg-[#f9fafb] ">
+        <div class="spinner flex items-center justify-center w-[70px] h-[70px] border-[5px] border-secondary border-t-transparent rounded-full ">
+            <img src="Assets/home/buyCarIcon.eeb2e066.svg" alt="" class="w-[50px]" >
+        </div>
+    </div>
+    <!--start loading page -->
+    <!-- start export -->
+    <section class="pt-20 pb-20">
+        <div class="container mx-auto">
+            <div class="lg:hidden flex  flex-row relative gap-y-4 items-center mb-4">
+                <input  type="text" placeholder="search for your car"
+                    class="search rounded-full bg-secondary w-full h-[50px]  border border-assent outline-none pl-[100px] pr-[70px] placeholder:text-white text-white placeholder:font-semibold ">
+                <button
+                    class=" rounded-full rounded-r-none  flex items-center justify-center translate-all  h-[48px] px-[25px] bg-assent text-secondary absolute  ">
+                    <i class="ri-search-line text-2xl"></i>
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Filter Cars</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Car Type Filter -->
+                    <div class="flex flex-col gap-2">
+                        <label class="font-semibold text-gray-700">Car Brand</label>
+                        <select id="carTypeFilter" class="border rounded-lg p-2 outline-none focus:border-primary">
+                            <option value="">All</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Mercedes">Mercedes</option>
+                            <option value="Audi">Audi</option>
+                            <option value="Kia">Kia</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                            <option value="MG">MG</option>
+                            <option value="Peugeot">Peugeot</option>
+                        </select>
+                    </div>
+
+                    <!-- Fuel Type Filter -->
+                    <div class="flex flex-col gap-2">
+                        <label class="font-semibold text-gray-700">Fuel Type</label>
+                        <select id="fuelFilter" class="border rounded-lg p-2 outline-none focus:border-primary">
+                            <option value="">All</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Petrol">Petrol</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+                    </div>
+
+                    <!-- Transmission Filter -->
+                    <div class="flex flex-col gap-2">
+                        <label class="font-semibold text-gray-700">Transmission</label>
+                        <select id="transmissionFilter" class="border rounded-lg p-2 outline-none focus:border-primary">
+                            <option value="">All</option>
+                            <option value="Automatic">Automatic</option>
+                            <option value="Manual">Manual</option>
+                        </select>
+                    </div>
+
+                    <!-- Price Range Filter -->
+                    <div class="flex flex-col gap-2">
+                        <label class="font-semibold text-gray-700">Price Range</label>
+                        <select id="priceFilter" class="border rounded-lg p-2 outline-none focus:border-primary">
+                            <option value="">All</option>
+                            <option value="0-1000">Under 1000</option>
+                            <option value="1000-2000">1000 - 2000</option>
+                            <option value="2000-3000">2000 - 3000</option>
+                            <option value="3000+">Over 3000</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-20  items-center" >
+                <div class="car shadow cursor-pointer rounded-lg" data-tilt>
+                    <div>
+                        <img src="Assets/rent/kia sportag.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Kia Sportage 2022</h4>
+                            <p class="text-[#00000085]">1st Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">1,580,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 29,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">90.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2022</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/vol.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Volkswagen Tiguan 2021</h4>
+                            <p class="text-[#00000085]">1st Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">1,950,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 30,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">70.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2021</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/seat.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Seat ATECA 2019</h4>
+                            <p class="text-[#00000085]">4st Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">1,450,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 20,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">50.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2019</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/v-black.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Volkswagen Tiguan 2021</h4>
+                            <p class="text-[#00000085]">4st Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">1,850,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 25,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">70.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2021</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/pmw.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">PMW 32oi 2020</h4>
+                            <p class="text-[#00000085]">4st Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">2,850,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 35,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">82.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2020</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/mg.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">MG zs 2020</h4>
+                            <p class="text-[#00000085]">4st Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">950,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 35,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">82.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2020</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/step1.75edff2a.svg" alt="" class=" w-[300px]">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center flex-col gap-1 p-2">
+                            <h4 class="text-xl font-bold ">Choose... Book Online!</h4>
+                            <p class="text-primary">Choose the car that suits you on our website and book an appointment to visit it in our showroom. No Fees!</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/step2.dc0688f9.svg" alt="" class=" w-[300px]">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center flex-col gap-1 p-2">
+                            <h4 class="text-xl font-bold ">View and Reserve</h4>
+                            <p class="text-primary">View the car in our showroom and book it for 10,000 EGP. (fully refundable)</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/step3.d8aa1439.svg" alt="" class=" w-[300px]">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center flex-col gap-1 p-2">
+                            <h4 class="text-xl font-bold ">Buy Your Car</h4>
+                            <p class="text-primary">The car will be reserved for you for 24 hours, during which you can decide to buy it or look at other cars.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/opel.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Opel Mokak 2022</h4>
+                            <p class="text-[#00000085]">2nd Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">1,150,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 18,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">30.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2022</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/cirt.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Citroen c3 Aircross 2021</h4>
+                            <p class="text-[#00000085]">2nd Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">850,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 14,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">87.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2022</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/pmw50.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">PMW 520i 2021</h4>
+                            <p class="text-[#00000085]">2nd Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">2,850,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 44,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">87.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2021</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/7.e.8a76d280.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/90-e.b7b01043.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/200-e.4fc8a8ed.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/pejo.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Peujeot 5008 2022</h4>
+                            <p class="text-[#00000085]">2nd Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">1,450,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 44,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">87.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2020</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/hundi.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Hyundai Tucson 2020</h4>
+                            <p class="text-[#00000085]">3rd Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">1,550,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 25,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">82.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2020</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/pmw x2.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">BMW x2 2019</h4>
+                            <p class="text-[#00000085]">3rd Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">1,500,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 16,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">97.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2019</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/sozi.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Suzuki Celerio 2022</h4>
+                            <p class="text-[#00000085]">3rd Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">600,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 10,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">37.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2022</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/mrc.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Mercedes-Benz C180 2018</h4>
+                            <p class="text-[#00000085]">3rd Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">2,100,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 34,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">147.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2018</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/red jeep.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Jeep Regeneade 2022</h4>
+                            <p class="text-[#00000085]">3rd Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">1,300,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 21,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">53.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2022</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/white.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Jeep Regeneade 2018</h4>
+                            <p class="text-[#00000085]">3rd Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">1,300,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 21,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">53.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2018</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg">
+                    <div>
+                        <img src="Assets/rent/Audio.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div class="data bg-[#f9fafb]">
+                        <div class="flex items-center bg-[#eaefe6ed] gap-1">
+                            <i class="ri-bard-fill text-primary "></i>
+                            <p class="text-sm">Fully Refurbished</p>
+                        </div>
+                        <div class="mt-2 p-2">
+                            <h4 class="text-[#000] font-bold">Audi Q2 2019</h4>
+                            <p class="text-[#00000085]">3rd Category</p>
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-gas-station-fill text-primary"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-steering-2-fill text-primary"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-user-2-fill text-primary"></i>
+                                    <span>5 Seats</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-dashboard-3-line text-primary"></i>
+                                    <span>180 km/h</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 mb-2">
+                                <h3 class="font-bold text-primary text-lg">1,100,000 <span class="font-normal text-[#000] text-sm">Egp</span></h3>
+                                <p class="font-bold text-sm">From 21,388/mon</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center  justify-around mb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-speed-up-fill text-xl mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">53.700km</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-calendar-line mb-1 text-primary font-semibold"></i>
+                                <p class="text-sm">2019</p>
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <i class="ri-car-line text-primary font-semibold mb-1"></i>
+                                <p class="text-sm">Automatic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car shadow cursor-pointer rounded-lg p-10">
+                    <div>
+                        <img src="Assets/rent/search.webp" alt="" class="overflow-hidden rounded-lg rounded-b-none">
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-primary ">
+                            Can't find the car you're looking for?
+                        </h3>
+                        <p>Tell us more about it!</p>
+                        <div class="text-center mt-8">
+                            <a href="" class="lg:px-[90px] lg:py-[9px] px-[25px] py-[9px] bg-primary text-white text-lg font-bold rounded-lg ">Request A Car</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end export -->
+
+    <div id="carDetailsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-6 rounded-lg max-w-4xl w-full mx-4 relative contain">
+            <button onclick="closeCarModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="ri-close-line text-2xl"></i>
+            </button>
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="md:w-1/2">
+                    <img id="modalCarImage" src="" alt="Car Image i" class="w-full h-auto rounded-lg">
+                    <div class="flex items-center  flex-row gap-2 mt-2">
+                        <img onclick="car(this.src); " src="Assets/rent/step (1).webp" alt=""
+                        class="lg:w-[100px] w-[55px] rounded-xl cursor-pointer hover:scale-[1.2] duration-500">
+                    <img onclick="car(this.src); " src="Assets/rent/step (2).webp" alt=""
+                        class="lg:w-[100px] w-[55px] rounded-xl cursor-pointer hover:scale-[1.2] duration-500">
+                    <img onclick="car(this.src); " src="Assets/rent/step (3).webp" alt=""
+                        class="lg:w-[100px] w-[55px] rounded-xl cursor-pointer hover:scale-[1.2] duration-500">
+                    <img onclick="car(this.src); " src="Assets/rent/step (4).webp" alt=""
+                        class="lg:w-[100px] w-[55px] rounded-xl cursor-pointer hover:scale-[1.2] duration-500">
+                    <img onclick="car(this.src); " src="Assets/rent/step (5).webp" alt=""
+                        class="lg:w-[100px] w-[55px] rounded-xl cursor-pointer hover:scale-[1.2] duration-500">
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 id="modalCarTitle" class="text-2xl font-bold text-gray-800 mb-4"></h2>
+                    <div id="modalCarDetails" class="space-y-4">
+                        <div class="flex items-center gap-2">
+                            <i class="ri-money-dollar-circle-line text-primary"></i>
+                            <span id="modalCarPrice" class="font-semibold"></span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ri-speed-up-fill text-primary"></i>
+                            <span id="modalCarMileage"></span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ri-calendar-line text-primary"></i>
+                            <span id="modalCarYear"></span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ri-gas-station-fill text-primary"></i>
+                            <span id="modalCarFuel"></span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ri-steering-2-fill text-primary"></i>
+                            <span id="modalCarTransmission"></span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 mt-6">
+                        <button class="flex-1 bg-[#25D366] text-white px-4 py-3 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center gap-2">
+                            <i class="ri-whatsapp-line text-xl"></i>
+                            WhatsApp
+                        </button>
+                        <a href="" class="flex-1 bg-primary text-white px-4 py-3 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center gap-2">
+                            <i class="ri-car-line text-xl"></i>
+                            Rent now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- start footer -->
+    <footer class="footer pt-16 xl:pt-[150px] font-semibold text-white">
+        <div class="container mx-auto pb-12 xl:pb-[100px]">
+            <div class="flex flex-col lg:flex-row gap-x-5 gap-y-10">
+                <div class="footer__item flex-1">
+                    <a href="#">
+                        <img class="mb-[30px] " src="assets/img/header/logo.svg" alt="">
+                    </a>
+                    <p class="mb-[50px] text-2xl text-primary">Ready to start with Rento?</p>
+                    <div class="flex flex-col gap-y-3 mb-10">
+                        <div class="flex items-center gap-x-[6px]">
+                            <i class="ri-map-pin-fill text-[24px] text-assent "></i>
+                            <div>123 Alering, Milano, Ny</div>
+                        </div>
+                        <div class="flex items-center gap-x-[6px]">
+                            <i class="ri-mail-fill text-[24px] text-assent"></i>
+                            <div>Insove@email.com</div>
+                        </div>
+                        <div class="flex items-center gap-x-[6px]">
+                            <i class="ri-phone-fill text-[24px] text-assent "></i>
+                            <div>(+123) 365 9876</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-[14px] text-[30px]">
+                        <div class="p-[10px] rounded-[10px] shadow-custom2 text-assent  hover:text-assent cursor-pointer transition-all">
+                            <i class="ri-facebook-circle-fill"></i>
+                        </div>
+                        <div class="p-[10px] rounded-[10px] shadow-custom2 text-assent   hover:text-assent cursor-pointer transition-all">
+                            <i class="ri-instagram-fill"></i>
+                        </div>
+                        <div class="p-[10px] rounded-[10px] shadow-custom2 text-assent   hover:text-assent cursor-pointer transition-all">
+                            <i class="ri-whatsapp-fill"></i>
+                        </div>
+                        <div class="p-[10px] rounded-[10px] shadow-custom2 text-assent   hover:text-assent cursor-pointer transition-all">
+                            <i class="ri-pinterest-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__item flex-1">
+                    <h4 class="text-[20px] xl:text-[26px] font-semibold capitalize text-primary mb-5">Quick Links</h4>
+                    <div class="flex gap-x-5">
+                        <ul class="flex-1 flex flex-col gap-y-5">
+                            <li><a href="#" class="hover:text-assent transition-all">Home</a></li>
+                            <li><a href="#" class="hover:text-assent transition-all">About Us</a></li>
+                            <li><a href="#" class="hover:text-assent transition-all">Department</a></li>
+                            <li><a href="#" class="hover:text-assent transition-all">services</a></li>
+                            <li><a href="#" class="hover:text-assent transition-all">Blog</a></li>
+                        </ul>
+                        <ul class="flex-1 flex flex-col gap-y-5">
+                            <li><a href="#" class="hover:text-assent transition-all">Our Pricing</a></li>
+                            <li><a href="#" class="hover:text-assent transition-all">Contact</a></li>
+                            <li><a href="#" class="hover:text-assent transition-all">Careers</a></li>
+                            <li><a href="#" class="hover:text-assent transition-all">Faqs</a></li>
+                            <li><a href="#" class="hover:text-assent transition-all">Privecy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__item flex-1">
+                    <h4 class="text-[20px] xl:text-[26px] font-semibold capitalize text-primary mb-5">Opening Hours</h4>
+                    <div class="flex flex-col  gap-5">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center border-b pb-[10px]">
+                                <div>Monday - Thursday</div> 
+                                <div class="text-assent">8:00 Am - 6:00 Pm</div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center border-b pb-[10px]">
+                                <div>Monday - Thursday</div> 
+                                <div class="text-assent">8:00 Am - 6:00 Pm</div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center border-b pb-[10px]">
+                                <div>Monday - Thursday</div> 
+                                <div class="text-assent">8:00 Am - 6:00 Pm</div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center border-b pb-[10px]">
+                                <div>Monday - Thursday</div> 
+                                <div class="text-assent">8:00 Am - 6:00 Pm</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-[30px] border-t text-center text-base">&copy; 2025 Rento - All Rights Reserved.</div>
+    </footer>
+    <!-- end footer -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/tilt.jquery.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        let bt = document.querySelector(".to");
+        window.onscroll = function (){
+        if(window.scrollY >= 600){
+            bt.style.display = "block";
+        }else{
+            bt.style.display = "none";
+        }
+        }
+
+        bt.onclick = function(){
+            window.scrollTo({
+            left : 0,
+            top : 0,
+            behavior : "smooth"
+        });
+        }
+
+
+        //animation loading
+document.addEventListener("DOMContentLoaded", function(){
+    // Hide loading initially
+    const loader = document.getElementById("loading");
+    if (loader) {
+        loader.style.display = "none";
+    }
+
+    // Add click event to all links with class 'link'
+    document.querySelectorAll(".link").forEach(link => {
+        link.addEventListener("click", function(e){
+            e.preventDefault();
+            const loader = document.getElementById("loading");
+            if (loader) {
+                loader.style.display = "flex";
+            }
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 1000);
+        });
+    });
+});
+    $(document).ready(function(){
+        $('.car').tilt({
+            maxTilt : .5,
+            glare : true,
+            maxGlare: 0.6,
+        })
+    })
+    </script>
+</body>
+
+</html>

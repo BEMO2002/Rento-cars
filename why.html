@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="shortcut icon" href="assets/home/buyCarIcon.eeb2e066.svg" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/input.css">
+    <link rel="stylesheet" href="dist/output.css">
+    <title>Rento Cars</title>
+</head>
+
+<body>
+    <!-- start header of Navbar -->
+    <header>
+        <div class="lg mx-auto">
+            <!--  start desk nav -->
+            <nav class="bg-secondary  flex flex-row justify-between p-[15px] lg  ">
+                <div class="mr-0 lg:mr-[40px] w-[160px] lg:w-[190px]">
+                    <a href="index.html" class="flex items-center gap-3 mt-1">
+                        <img src="Assets/home/buyCarIcon.eeb2e066.svg" alt="" class="lg:w-[50px] w-[40px] mb-1">
+                        <h2 class="font-bold text-4xl text-center text-white">RENTO</h2>
+                    </a>
+                </div>
+                <div class="text-center mt-2 hidden xl:flex">
+                    <ul class="flex flex-row items-center justify-center  gap-20 font-semibold">
+                        <li>
+                            <a href="rent.html" class="text-white link hover:text-primary transition-all">Rent Car</a>
+                        </li>
+                        <li>
+                            <a href="" class="text-white link hover:text-primary transition-all">Why Reto?</a>
+                        </li>
+                        <li>
+                            <a href="export.html" class="text-white link hover:text-primary transition-all">Export</a>
+                        </li>
+                        <li>
+                            <a href="faq.html" class="text-white link hover:text-primary transition-all">Faq</a>
+                        </li>
+                        <li>
+                            <a href="post ad.html" class="text-white link hover:text-primary transition-all">Post Ad</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class=" hidden lg:flex  lg:flex-row relative gap-y-4 items-center">
+                    <input type="text" placeholder="search for your car"
+                        class="rounded-full bg-transparent w-full h-[50px]  border border-assent outline-none pl-[160px] pr-[70px] placeholder:text-white text-white placeholder:font-semibold ">
+                    <button
+                        class=" rounded-full rounded-r-none  flex items-center justify-center translate-all  h-[50px] px-[25px] bg-assent text-secondary md:absolute left-0">
+                        <i class="ri-search-line text-2xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex items-center justify-center  lg:mr-9 mr-0 ">
+                    <div id="userMenu" class="hidden">
+                        <button id="userMenuBtn" class="bg-assent p-2 rounded-full pl-5 pr-5 font-semibold text-primary">
+                            <i class="ri-user-line bg- text-black font-normal p-1 border rounded-full"></i>
+                            <span id="userName">User</span>
+                            <i class="ri-menu-4-line"></i>
+                        </button>
+                        <div id="userDropdown" class="hidden absolute bg-white mt-2 py-2 w-48 rounded-lg shadow-xl z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                            <hr class="my-1">
+                            <a href="#" id="logoutBtn" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Logout</a>
+                        </div>
+                    </div>
+                    <a href="auth.html" id="loginBtn" class="bg-assent p-2 rounded-full pl-5 pr-5 font-semibold text-primary">
+                        <i class="ri-user-line bg- text-black font-normal p-1 border rounded-full"></i>
+                        Sign in
+                    </a>
+                </div>
+            </nav>
+            <!-- end desk nav -->
+            <!-- mobile nav -->
+            <nav
+                class="view bg-[#fff] fixed w-[300px] left-0 top-0 h-screen  shadow-2xl  transition-all duration-300 z-20">
+                <div
+                    class="close-btn bg-secondary w-10 h-10  relative -right-full top-36 flex justify-center items-center rounded-tr-lg rounded-br-lg cursor-pointer transition-all">
+                    <i class=" close-btn-icon ri-roadster-fill text-2xl text-white"></i>
+                </div>
+                <!-- logo -->
+                <div class="px-2 flex flex-col  h-full">
+                    <a href="#">
+                        <h2 class="font-bold text-5xl text-center text-secondary">RENTO</h2>
+                    </a>
+                    <hr>
+                    <div class=" flex items-center justify-center space-x-4 mt-7 bg-assent px-2 py-3 rounded-xl">
+                        <div>
+                            <i class="ri-user-line bg-white text-black font-normal p-4 text-xl border rounded-full"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <a href="" class="font-semibold text-xl">Sign in </a>
+                            <p class="text-[15px]">Don't have an account?</p>
+                            <a href="" class="text-primary">Sign Up</a>
+                        </div>
+                    </div>
+                    <!-- list -->
+                    <ul class=" flex flex-col  gap-y-10 pt-10 font-semibold ml-4 mb-2">
+                        <li class="flex items-center gap-4 justify-start">
+                            <img src="Assets/home/buyCarIcon.eeb2e066.svg" alt="">
+                            <a href="rent.html" class="link">Browse All Cars</a>
+                        </li>
+                        <li class="flex items-center gap-4 justify-start">
+                            <img src="Assets/home/sellCarIcon.35d865ce.svg" alt="">
+                            <a href="why.html" class="link">Why Rento?</a>
+                        </li>
+                        <li class="flex items-center gap-4 justify-start">
+                            <img src="Assets/home/FAQsIcon.f22b2925.svg" alt="">
+                            <a href="faq.html" class="link">FAQs</a>
+                        </li>
+                        <li class="flex items-center gap-4 justify-start">
+                            <img src="Assets/home/FinanceLogo.f5ba3d67.svg" alt="">
+                            <a href="export.html" class="link">Export</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="flex flex-col  items-center mt-8 gap-4">
+                        <a href="" class="px-20 py-3 bg-primary rounded-lg text-white font-bold text-xl">Rent A Car</a>
+                        <!-- <a href="" class="px-20 py-3 bg-secondary rounded-lg text-white font-bold text-xl">Sell A -->
+                            <!-- Car</a> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- end header of Navbar -->
+    <!-- start top button -->
+    <button
+        class="top  p-[15px]  bg-secondary text-[#fff] border rounded-md  font-bold fixed right-[10px] bottom-[20px] z-10 ">
+        <i class="ri-arrow-up-double-line text-xl"></i>
+    </button>
+    <!-- end top button -->
+    <!--start loading page -->
+    <div id="loading" class="flex items-center justify-center top-0 left-0 z-50   fixed w-[100%] h-[100%] bg-[#f9fafb] ">
+        <div class="spinner flex items-center justify-center w-[70px] h-[70px] border-[5px] border-secondary border-t-transparent rounded-full ">
+            <img src="Assets/home/buyCarIcon.eeb2e066.svg" alt="" class="w-[50px]" >
+        </div>
+    </div>
+    <!--start loading page -->
+    <!-- start export -->
+    <section class="pt-20 pb-20">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-center w-full">
+                <div class="w-1/12 border-t-2 border-primary"></div>
+                <span class="mx-4 text-3xl lg:text-4xl font-bold ">How it Works?</span>
+                <div class="w-1/12 border-t-2 border-primary"></div>
+            </div>
+            <div class="flex lg:flex-row flex-col  items-center justify-between gap-10">
+                <div>
+                    <img src="Assets/what/howItWorks1.1aa11cfd.svg" alt="">
+                </div>
+                <div class="flex items-start flex-col">
+                    <span class="pl-3 pr-4 rounded-full text-primary bg-assent text-xl font-bold mb-4">1</span>
+                    <h3 class="text-4xl text-primary font-bold "> Find your Perfect Rento Certified car</h3>
+                    <p class="text-lg mt-3">Browse our wide range of high-quality and great value Sylndr Certified cars. Whether it’s a price range or a body type, there’s a Sylndr Certified car for you</p>
+                </div>
+            </div>
+            <hr>
+            <div class="flex lg:flex-row flex-col-reverse items-center justify-between gap-10 mt-10">
+                <div class="flex items-start flex-col">
+                    <span class="pl-3 pr-4 rounded-full text-primary bg-assent text-xl font-bold mb-4">2</span>
+                    <h3 class="text-4xl text-primary font-bold "> See everything inside out</h3>
+                    <p class="text-lg mt-3">Everything you need to know is available online; go through features, specs, price, financing and our detailed inspection report. Use our high-res 360 imaging and imperfections to get into every detail.</p>
+                </div>
+                <div>
+                    <img src="Assets/what/howItWorks2.52cebd25.svg" alt="">
+                </div>
+            </div>
+            <hr>
+            <div class="flex lg:flex-row flex-col  items-center justify-between gap-20 mt-10">
+                <div>
+                    <img src="Assets/what/howItWorks3.4b81cf5c.svg" alt="">
+                </div>
+                <div class="flex items-start flex-col">
+                    <span class="pl-3 pr-4 rounded-full text-primary bg-assent text-xl font-bold mb-4">3</span>
+                    <h3 class="text-4xl text-primary font-bold "> Test drive time! Where shall we meet?</h3>
+                    <p class="text-lg mt-3">Book your test drive at your home, our experts will ride along to help you make the right decision and answer all your inquiries. We want you to have the test drive at a location convenient to your daily schedule.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="flex lg:flex-row flex-col-reverse  items-center justify-between gap-20 mt-10">
+
+                <div class="flex items-start flex-col">
+                    <span class="pl-3 pr-4 rounded-full text-primary bg-assent text-xl font-bold mb-4">4</span>
+                    <h3 class="text-4xl text-primary font-bold "> You can always Finance it</h3>
+                    <p class="text-lg mt-3">Choose your favorite financing plan and Submit your application online; and get your approval in just a few hours. We provide competitive interest rates that start from a 10% down payment.</p>
+                </div>
+                <div>
+                    <img src="Assets/what/howItWorks4.2b5bedb3.svg" alt="">
+                </div>
+            </div>
+            <hr>
+            <div class="flex lg:flex-row flex-col  items-center justify-between gap-20 mt-10">
+                <div>
+                    <img src="Assets/what/howItWorks5.8ad6081e.svg" alt="">
+                </div>
+                <div class="flex items-start flex-col">
+                    <span class="pl-3 pr-4 rounded-full text-primary bg-assent text-xl font-bold mb-4">5</span>
+                    <h3 class="text-4xl text-primary font-bold "> Paperwork, never been easier!</h3>
+                    <p class="text-lg mt-3">You don’t need to visit the Public Notary Office to formalize the ownership transfer of your Sylndr Certified car, just head directly to the traffic authority and get your new license.</p>
+                </div>
+
+            </div>
+            <hr>
+            <div class="flex lg:flex-row flex-col-reverse  items-center justify-between gap-20 mt-10">
+
+                <div class="flex items-start flex-col">
+                    <span class="pl-3 pr-4 rounded-full text-primary bg-assent text-xl font-bold mb-4">6</span>
+                    <h3 class="text-4xl text-primary font-bold "> Collect it or have it delivered to your doorstep.</h3>
+                    <p class="text-lg mt-3">Choose whether to pick up the car from our Sylndr Hub or have it delivered to your doorstep, we want you to have a memorable experience.</p>
+                </div>
+                <div>
+                    <img src="Assets/what/howItWorks6.2954b685.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end export -->
+        <!-- start footer -->
+        <footer class="footer pt-16 xl:pt-[150px] font-semibold text-white">
+            <div class="container mx-auto pb-12 xl:pb-[100px]">
+                <div class="flex flex-col lg:flex-row gap-x-5 gap-y-10">
+                    <div class="footer__item flex-1">
+                        <a href="#">
+                            <img class="mb-[30px] " src="assets/img/header/logo.svg" alt="">
+                        </a>
+                        <p class="mb-[50px] text-2xl text-primary">Ready to start with Rento?</p>
+                        <div class="flex flex-col gap-y-3 mb-10">
+                            <div class="flex items-center gap-x-[6px]">
+                                <i class="ri-map-pin-fill text-[24px] text-assent "></i>
+                                <div>123 Alering, Milano, Ny</div>
+                            </div>
+                            <div class="flex items-center gap-x-[6px]">
+                                <i class="ri-mail-fill text-[24px] text-assent"></i>
+                                <div>Insove@email.com</div>
+                            </div>
+                            <div class="flex items-center gap-x-[6px]">
+                                <i class="ri-phone-fill text-[24px] text-assent "></i>
+                                <div>(+123) 365 9876</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-[14px] text-[30px]">
+                            <div class="p-[10px] rounded-[10px] shadow-custom2 text-assent  hover:text-assent cursor-pointer transition-all">
+                                <i class="ri-facebook-circle-fill"></i>
+                            </div>
+                            <div class="p-[10px] rounded-[10px] shadow-custom2 text-assent   hover:text-assent cursor-pointer transition-all">
+                                <i class="ri-instagram-fill"></i>
+                            </div>
+                            <div class="p-[10px] rounded-[10px] shadow-custom2 text-assent   hover:text-assent cursor-pointer transition-all">
+                                <i class="ri-whatsapp-fill"></i>
+                            </div>
+                            <div class="p-[10px] rounded-[10px] shadow-custom2 text-assent   hover:text-assent cursor-pointer transition-all">
+                                <i class="ri-pinterest-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__item flex-1">
+                        <h4 class="text-[20px] xl:text-[26px] font-semibold capitalize text-primary mb-5">Quick Links</h4>
+                        <div class="flex gap-x-5">
+                            <ul class="flex-1 flex flex-col gap-y-5">
+                                <li><a href="#" class="hover:text-assent transition-all">Home</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">About Us</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">Department</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">services</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">Blog</a></li>
+                            </ul>
+                            <ul class="flex-1 flex flex-col gap-y-5">
+                                <li><a href="#" class="hover:text-assent transition-all">Our Pricing</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">Contact</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">Careers</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">Faqs</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">Privecy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__item flex-1">
+                        <h4 class="text-[20px] xl:text-[26px] font-semibold capitalize text-primary mb-5">Opening Hours</h4>
+                        <div class="flex flex-col  gap-5">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center border-b pb-[10px]">
+                                    <div>Monday - Thursday</div> 
+                                    <div class="text-assent">8:00 Am - 6:00 Pm</div>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center border-b pb-[10px]">
+                                    <div>Monday - Thursday</div> 
+                                    <div class="text-assent">8:00 Am - 6:00 Pm</div>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center border-b pb-[10px]">
+                                    <div>Monday - Thursday</div> 
+                                    <div class="text-assent">8:00 Am - 6:00 Pm</div>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center border-b pb-[10px]">
+                                    <div>Monday - Thursday</div> 
+                                    <div class="text-assent">8:00 Am - 6:00 Pm</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-[30px] border-t text-center text-base">&copy; 2025 Rento - All Rights Reserved.</div>
+        </footer>
+        <!-- end footer -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        //animation loading
+document.addEventListener("DOMContentLoaded", function(){
+    // Hide loading initially
+    const loader = document.getElementById("loading");
+    if (loader) {
+        loader.style.display = "none";
+    }
+
+    // Add click event to all links with class 'link'
+    document.querySelectorAll(".link").forEach(link => {
+        link.addEventListener("click", function(e){
+            e.preventDefault();
+            const loader = document.getElementById("loading");
+            if (loader) {
+                loader.style.display = "flex";
+            }
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 1000);
+        });
+    });
+});
+    </script>
+</body>
+
+</html>

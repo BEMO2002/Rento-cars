@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="shortcut icon" href="assets/home/buyCarIcon.eeb2e066.svg" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/input.css">
+    <link rel="stylesheet" href="dist/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/dash.js" defer></script>
+    <title>Rento Cars</title>
+</head>
+
+<body>
+    <!-- start header of Navbar -->
+    <header>
+        <div class="lg mx-auto">
+            <!--  start desk nav -->
+            <nav class="bg-secondary  flex flex-row justify-between p-[15px] lg  ">
+                <div class="mr-0 lg:mr-[40px] w-[160px] lg:w-[190px]">
+                    <a href="index.html" class="flex items-center gap-3 mt-1">
+                        <img src="Assets/home/buyCarIcon.eeb2e066.svg" alt="" class="lg:w-[50px] w-[40px] mb-1">
+                        <h2 class="font-bold text-4xl text-center text-white">RENTO</h2>
+                    </a>
+                </div>
+                <div class="text-center mt-2 hidden xl:flex">
+                    <ul class="flex flex-row items-center justify-center  gap-20 font-semibold">
+                        <li>
+                            <a href="rent.html" class="text-white link hover:text-primary transition-all">Rent Car</a>
+                        </li>
+                        <li>
+                            <a href="why.html" class="text-white link hover:text-primary transition-all">Why Reto?</a>
+                        </li>
+                        <li>
+                            <a href="export.html" class="text-white link hover:text-primary transition-all">Export</a>
+                        </li>
+                        <li>
+                            <a href="faq.html" class="text-white link hover:text-primary transition-all">Faq</a>
+                        </li>
+                        <li>
+                            <a href="post ad.html" class="text-white link hover:text-primary transition-all">Post Ad</a>
+                        </li> 
+                    </ul>
+                </div>
+                <div class=" hidden lg:flex  lg:flex-row relative gap-y-4 items-center">
+                    <input type="text" placeholder="search for your car"
+                        class="rounded-full bg-transparent w-full h-[50px]  border border-assent outline-none pl-[160px] pr-[70px] placeholder:text-white text-white placeholder:font-semibold ">
+                    <button
+                        class=" rounded-full rounded-r-none  flex items-center justify-center translate-all  h-[50px] px-[25px] bg-assent text-secondary md:absolute left-0">
+                        <i class="ri-search-line text-2xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex items-center justify-center  lg:mr-9 mr-0 ">
+                    <div id="userMenu" class="hidden">
+                        <button id="userMenuBtn" class="bg-assent p-2 rounded-full pl-5 pr-5 font-semibold text-primary">
+                            <i class="ri-user-line bg- text-black font-normal p-1 border rounded-full"></i>
+                            <span id="userName">User</span>
+                            <i class="ri-menu-4-line"></i>
+                        </button>
+                        <div id="userDropdown" class="hidden absolute bg-white mt-2 py-2 w-48 rounded-lg shadow-xl z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                            <hr class="my-1">
+                            <a href="#" id="logoutBtn" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Logout</a>
+                        </div>
+                    </div>
+                    <a href="auth.html" id="loginBtn" class="bg-assent p-2 rounded-full pl-5 pr-5 font-semibold text-primary">
+                        <i class="ri-user-line bg- text-black font-normal p-1 border rounded-full"></i>
+                        Sign in
+                    </a>
+                </div>
+            </nav>
+            <!-- end desk nav -->
+            <!-- mobile nav -->
+            <nav
+                class="view bg-[#fff] fixed w-[300px] left-0 top-0 h-screen  shadow-2xl  transition-all duration-300 z-20">
+                <div
+                    class="close-btn bg-secondary w-10 h-10  relative -right-full top-36 flex justify-center items-center rounded-tr-lg rounded-br-lg cursor-pointer transition-all">
+                    <i class=" close-btn-icon ri-roadster-fill text-2xl text-white"></i>
+                </div>
+                <!-- logo -->
+                <div class="px-2 flex flex-col  h-full">
+                    <a href="#">
+                        <h2 class="font-bold text-5xl text-center text-secondary">RENTO</h2>
+                    </a>
+                    <hr>
+                    <div class=" flex items-center justify-center space-x-4 mt-7 bg-assent px-2 py-3 rounded-xl">
+                        <div>
+                            <i class="ri-user-line bg-white text-black font-normal p-4 text-xl border rounded-full"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <a href="" class="font-semibold text-xl">Sign in </a>
+                            <p class="text-[15px]">Don't have an account?</p>
+                            <a href="" class="text-primary">Sign Up</a>
+                        </div>
+                    </div>
+                    <!-- list -->
+                    <ul class=" flex flex-col  gap-y-10 pt-10 font-semibold ml-4 mb-2">
+                        <li class="flex items-center gap-4 justify-start">
+                            <img src="Assets/home/buyCarIcon.eeb2e066.svg" alt="">
+                            <a href="rent.html" class="link">Browse All Cars</a>
+                        </li>
+                        <li class="flex items-center gap-4 justify-start">
+                            <img src="Assets/home/sellCarIcon.35d865ce.svg" alt="">
+                            <a href="why.html" class="link">Why Rento?</a>
+                        </li>
+                        <li class="flex items-center gap-4 justify-start">
+                            <img src="Assets/home/FAQsIcon.f22b2925.svg" alt="">
+                            <a href="faq.html" class="link">FAQs</a>
+                        </li>
+                        <li class="flex items-center gap-4 justify-start">
+                            <img src="Assets/home/FinanceLogo.f5ba3d67.svg" alt="">
+                            <a href="export.html" class="link">Export</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="flex flex-col  items-center mt-8 gap-4">
+                        <a href="" class="px-20 py-3 bg-primary rounded-lg text-white font-bold text-xl">Rent A Car</a>
+                        <!-- <a href="" class="px-20 py-3 bg-secondary rounded-lg text-white font-bold text-xl">Sell A -->
+                            <!-- Car</a> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- end header of Navbar -->
+    <!-- start top button -->
+    <button
+        class="top  p-[15px]  bg-secondary text-[#fff] border rounded-md  font-bold fixed right-[10px] bottom-[20px] z-10 ">
+        <i class="ri-arrow-up-double-line text-xl"></i>
+    </button>
+    <!-- end top button -->
+    <!--start loading page -->
+    <div id="loading" class="flex items-center justify-center top-0 left-0 z-50   fixed w-[100%] h-[100%] bg-[#f9fafb] ">
+        <div class="spinner flex items-center justify-center w-[70px] h-[70px] border-[5px] border-secondary border-t-transparent rounded-full ">
+            <img src="Assets/home/buyCarIcon.eeb2e066.svg" alt="" class="w-[50px]" >
+        </div>
+    </div>
+    <!-- start table -->
+    <main class="p-6"> 
+        <!-- Section Title -->
+        <section class="mb-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h3 class="font-bold text-xl">Rento Dashboard</h3>
+                </div>
+                <div class="flex items-center space-x-7">
+                    <i class="ri-settings-2-fill text-xl border-2 border-[#ccc] p-1 rounded-md"></i>
+                    <button class="bg-secondary px-4 py-3 rounded-lg text-white" id="createProductBtn">Create product</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Table Section -->
+        <section class="overflow-x-auto w-full" dir="ltr">
+            <div class="min-w-[1500px]">
+                <table class="w-full bg-white border border-gray-300">
+                    <thead class="bg-[#00264D] text-white">
+                        <tr>
+                            <th class="px-6 py-3 border text-left">Car Image</th>
+                            <th class="px-6 py-3 border text-left">Car Name</th>
+                            <th class="px-6 py-3 border text-left">Model</th>
+                            <th class="px-6 py-3 border text-left">Transmission</th>
+                            <th class="px-6 py-3 border text-left">Passengers</th>
+                            <th class="px-6 py-3 border text-left">Features</th>
+                            <th class="px-6 py-3 border text-left">Extra Features</th>
+                            <th class="px-6 py-3 border text-left">Daily Price</th>
+                            <th class="px-6 py-3 border text-left">Monthly Price</th>
+                            <th class="px-6 py-3 border text-left">Status</th>
+                            <th class="px-6 py-3 border text-left">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="carTableBody">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 border">
+                                <img src="Assets/rent/kia sportag.webp" alt="Kia Sportage" class="w-16 h-12 object-cover rounded">
+                            </td>
+                            <td class="px-6 py-4 border">Kia Sportage</td>
+                            <td class="px-6 py-4 border">2024</td>
+                            <td class="px-6 py-4 border">Automatic</td>
+                            <td class="px-6 py-4 border">4 Seats</td>
+                            <td class="px-6 py-4 border">Air Conditioning</td>
+                            <td class="px-6 py-4 border">GPS Navigation</td>
+                            <td class="px-6 py-4 border text-primary">500 EGP</td>
+                            <td class="px-6 py-4 border text-primary">15000 EGP</td>
+                            <td class="px-6 py-4 border">
+                                <span class="px-3 py-1 rounded-full bg-green-100 text-green-800">Available</span>
+                            </td>
+                            <td class="px-6 py-4 border">
+                                <div class="flex items-center gap-2">
+                                    <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700">
+                                        <i class="ri-eye-line"></i> View
+                                    </button>
+                                    <button class="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700">
+                                        <i class="ri-edit-line"></i> Edit
+                                    </button>
+                                    <button class="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700">
+                                        <i class="ri-delete-bin-line"></i> Delete
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 border">
+                                <img src="Assets/rent/vol.webp" alt="Volkswagen T-Roc" class="w-16 h-12 object-cover rounded">
+                            </td>
+                            <td class="px-6 py-4 border">Volkswagen T-Roc</td>
+                            <td class="px-6 py-4 border">2023</td>
+                            <td class="px-6 py-4 border">Automatic</td>
+                            <td class="px-6 py-4 border">5 Seats</td>
+                            <td class="px-6 py-4 border">Leather Seats</td>
+                            <td class="px-6 py-4 border">Parking Sensors</td>
+                            <td class="px-6 py-4 border text-primary">600 EGP</td>
+                            <td class="px-6 py-4 border text-primary">15000 EGP</td>
+                            <td class="px-6 py-4 border">
+                                <span class="px-3 py-1 rounded-full bg-green-100 text-green-800">Available</span>
+                            </td>
+                            <td class="px-6 py-4 border">
+                                <div class="flex items-center gap-2">
+                                    <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700">
+                                        <i class="ri-eye-line"></i> View
+                                    </button>
+                                    <button class="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700">
+                                        <i class="ri-edit-line"></i> Edit
+                                    </button>
+                                    <button class="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700">
+                                        <i class="ri-delete-bin-line"></i> Delete
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 border">
+                                <img src="Assets/rent/pmw.webp" alt="BMW X5" class="w-16 h-12 object-cover rounded">
+                            </td>
+                            <td class="px-6 py-4 border">BMW X5</td>
+                            <td class="px-6 py-4 border">2024</td>
+                            <td class="px-6 py-4 border">Automatic</td>
+                            <td class="px-6 py-4 border">5 Seats</td>
+                            <td class="px-6 py-4 border">Panoramic Roof</td>
+                            <td class="px-6 py-4 border">360° Camera</td>
+                            <td class="px-6 py-4 border text-primary">800 EGP</td>
+                            <td class="px-6 py-4 border text-primary">20000 EGP</td>
+                            <td class="px-6 py-4 border">
+                                <span class="px-3 py-1 rounded-full bg-red-100 text-red-800">Rented</span>
+                            </td>
+                            <td class="px-6 py-4 border">
+                                <div class="flex items-center gap-2">
+                                    <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700">
+                                        <i class="ri-eye-line"></i> View
+                                    </button>
+                                    <button class="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700">
+                                        <i class="ri-edit-line"></i> Edit
+                                    </button>
+                                    <button class="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700">
+                                        <i class="ri-delete-bin-line"></i> Delete
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <!-- end table -->
+
+    <!-- Add Create Car Modal -->
+    <div id="createCarModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-6 rounded-lg max-w-4xl w-full mx-4 relative">
+            <h2 class="text-2xl font-bold mb-4">Add New Car</h2>
+            <form id="createCarForm" class="grid grid-cols-1 md:grid-cols-2  gap-4">
+                <!-- Left Column -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Car Image</label>
+                        <input type="file" accept="image/*" class="mt-1 block w-full border rounded-md p-2" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Car Name</label>
+                        <input type="text" class="mt-1 block w-full border rounded-md p-2" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Model</label>
+                        <input type="text" class="mt-1 block w-full border rounded-md p-2" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Transmission</label>
+                        <select class="mt-1 block w-full border rounded-md p-2" required>
+                            <option value="Automatic">Automatic</option>
+                            <option value="Manual">Manual</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Number of Passengers</label>
+                        <input type="number" min="1" max="9" class="mt-1 block w-full border rounded-md p-2" required>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Features</label>
+                        <input type="text" class="mt-1 block w-full border rounded-md p-2" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Extra Features</label>
+                        <input type="text" class="mt-1 block w-full border rounded-md p-2" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Daily Price</label>
+                        <input type="text" class="mt-1 block w-full border rounded-md p-2" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Monthly Price</label>
+                        <input type="text" class="mt-1 block w-full border rounded-md p-2" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Status</label>
+                        <select class="mt-1 block w-full border rounded-md p-2" required>
+                            <option value="Available">Available</option>
+                            <option value="Rented">Rented</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Form Buttons -->
+                <div class="col-span-2 flex justify-end space-x-3 mt-4">
+                    <button type="button" id="cancelCreateCar" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-secondary text-white rounded hover:bg-primary">Create Car</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+            //animation loading
+document.addEventListener("DOMContentLoaded", function(){
+    // Hide loading initially
+    const loader = document.getElementById("loading");
+    if (loader) {
+        loader.style.display = "none";
+    }
+
+    // Add click event to all links with class 'link'
+    document.querySelectorAll(".link").forEach(link => {
+        link.addEventListener("click", function(e){
+            e.preventDefault();
+            const loader = document.getElementById("loading");
+            if (loader) {
+                loader.style.display = "flex";
+            }
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 1000);
+        });
+    });
+});
+    </script>
+</body>
+
+</html>
