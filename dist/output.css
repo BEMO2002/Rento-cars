@@ -2067,6 +2067,10 @@ body{
 }
 
 @media (min-width: 960px) {
+  .lg\:mr-11 {
+    margin-right: 2.75rem;
+  }
+
   .lg\:mr-9 {
     margin-right: 2.25rem;
   }

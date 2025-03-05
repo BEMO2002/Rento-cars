@@ -72,13 +72,15 @@ document.getElementById('loginBtn').addEventListener('click', (e) => {
 // Handle Signup
 document.getElementById('signupBtn').addEventListener('click', (e) => {
     e.preventDefault();
-    const name = document.getElementById('signupName').value;
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const userName = document.getElementById('userName').value;
     const email = document.getElementById('signupEmail').value;
     const password = document.getElementById('signupPassword').value;
     const confirmPassword = document.getElementById('signupConfirmPassword').value;
 
     // Basic validation
-    if (!name || !email || !password || !confirmPassword) {
+    if (!firstName || !lastName || !userName || !email || !password || !confirmPassword) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -109,8 +111,24 @@ document.getElementById('signupBtn').addEventListener('click', (e) => {
         return;
     }
 
+    // Check if username already exists
+    if (users.some(user => user.userName === userName)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Username already taken'
+        });
+        return;
+    }
+
     // Add new user
-    const newUser = { name, email, password };
+    const newUser = { 
+        firstName,
+        lastName,
+        userName,
+        email, 
+        password 
+    };
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
 
