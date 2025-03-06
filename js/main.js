@@ -282,7 +282,7 @@ window.addEventListener('load', () => {
     // Show user menu
     userMenu.classList.remove('hidden');
     loginBtn.classList.add('hidden');
-    userName.textContent = currentUser.name;
+    userName.textContent = currentUser.firstName;
 
     // Handle user menu dropdown
     userMenuBtn.addEventListener('click', () => {
