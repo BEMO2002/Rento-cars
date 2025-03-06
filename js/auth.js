@@ -37,7 +37,11 @@ document.getElementById('loginBtn').addEventListener('click', (e) => {
         Swal.fire({
             icon: 'error',
             title: 'Error',
-            text: 'Please fill in all fields'
+            text: 'Please fill in all fields',
+            confirmButtonColor: '#FF6B6B',
+            customClass: {
+                confirmButton: 'px-4 py-2 rounded-lg'
+            }
         });
         return;
     }
@@ -54,7 +58,7 @@ document.getElementById('loginBtn').addEventListener('click', (e) => {
             icon: 'success',
             title: 'Success!',
             text: 'Login successful!',
-            timer: 1500,
+            timer: 1000,
             showConfirmButton: false
         }).then(() => {
             // Redirect to home page
@@ -72,19 +76,22 @@ document.getElementById('loginBtn').addEventListener('click', (e) => {
 // Handle Signup
 document.getElementById('signupBtn').addEventListener('click', (e) => {
     e.preventDefault();
-    const firstName = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
-    const userName = document.getElementById('userName').value;
+    const fullName = document.getElementById('fullName').value;
     const email = document.getElementById('signupEmail').value;
     const password = document.getElementById('signupPassword').value;
     const confirmPassword = document.getElementById('signupConfirmPassword').value;
 
     // Basic validation
-    if (!firstName || !lastName || !userName || !email || !password || !confirmPassword) {
+    if (!fullName || !email || !password || !confirmPassword) {
         Swal.fire({
             icon: 'error',
-            title: 'Error',
-            text: 'Please fill in all fields'
+            title: 'Validation Error',
+            text: 'Please fill in all fields',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#FF6B6B',
+            customClass: {
+                confirmButton: 'px-4 py-2 rounded-lg'
+            }
         });
         return;
     }
@@ -93,7 +100,11 @@ document.getElementById('signupBtn').addEventListener('click', (e) => {
         Swal.fire({
             icon: 'error',
             title: 'Error',
-            text: 'Passwords do not match'
+            text: 'Passwords do not match',
+            confirmButtonColor: '#FF6B6B',
+            customClass: {
+                confirmButton: 'px-4 py-2 rounded-lg'
+            }
         });
         return;
     }
@@ -106,26 +117,18 @@ document.getElementById('signupBtn').addEventListener('click', (e) => {
         Swal.fire({
             icon: 'error',
             title: 'Error',
-            text: 'Email already registered'
-        });
-        return;
-    }
-
-    // Check if username already exists
-    if (users.some(user => user.userName === userName)) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Username already taken'
+            text: 'Email already registered',
+            confirmButtonColor: '#FF6B6B',
+            customClass: {
+                confirmButton: 'px-4 py-2 rounded-lg'
+            }
         });
         return;
     }
 
     // Add new user
     const newUser = { 
-        firstName,
-        lastName,
-        userName,
+        fullName,
         email, 
         password 
     };
@@ -149,5 +152,88 @@ window.addEventListener('load', () => {
     const currentUser = localStorage.getItem('currentUser');
     if (currentUser) {
         window.location.href = 'index.html';
+    }
+});
+
+// Login form validation
+document.getElementById('loginBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('loginEmail');
+    const password = document.getElementById('loginPassword');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+    
+    // Reset errors
+    emailError.classList.add('hidden');
+    passwordError.classList.add('hidden');
+    
+    let isValid = true;
+    
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.value || !emailPattern.test(email.value)) {
+        emailError.classList.remove('hidden');
+        isValid = false;
+    }
+    
+    // Password validation
+    if (!password.value || password.value.length < 6) {
+        passwordError.classList.remove('hidden');
+        isValid = false;
+    }
+    
+    if (isValid) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Validation passed successfully',
+        });
+    }
+});
+// Update signup form validation
+document.getElementById('signupBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const fullName = document.getElementById('fullName');
+    const email = document.getElementById('signupEmail');
+    const password = document.getElementById('signupPassword');
+    const confirmPassword = document.getElementById('signupConfirmPassword');
+    
+    // Reset all error messages
+    document.querySelectorAll('#signupForm .text-red-500').forEach(error => {
+        error.classList.add('hidden');
+    });
+    
+    let isValid = true;
+    
+    // Validate fields
+    if (!fullName.value.trim()) {
+        document.getElementById('fullNameError').classList.remove('hidden');
+        isValid = false;
+    }
+    
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.value || !emailPattern.test(email.value)) {
+        document.getElementById('signupEmailError').classList.remove('hidden');
+        isValid = false;
+    }
+    
+    if (!password.value || password.value.length < 6) {
+        document.getElementById('signupPasswordError').classList.remove('hidden');
+        isValid = false;
+    }
+    
+    if (password.value !== confirmPassword.value) {
+        document.getElementById('confirmPasswordError').classList.remove('hidden');
+        isValid = false;
+    }
+    
+    if (isValid) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Account created successfully',
+        });
     }
 });
