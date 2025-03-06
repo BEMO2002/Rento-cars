@@ -27,7 +27,7 @@ showLoginLink.addEventListener('click', (e) => {
 });
 
 // Handle Login
-document.getElementById('loginBtn').addEventListener('click', (e) => {
+document.getElementById('loginBtn').addEventListener('click', async (e) => {
     e.preventDefault();
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
@@ -38,10 +38,19 @@ document.getElementById('loginBtn').addEventListener('click', (e) => {
             icon: 'error',
             title: 'Error',
             text: 'Please fill in all fields',
-            confirmButtonColor: '#FF6B6B',
-            customClass: {
-                confirmButton: 'px-4 py-2 rounded-lg'
-            }
+            confirmButtonColor: '#FF6B6B'
+        });
+        return;
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Please enter a valid email address',
+            confirmButtonColor: '#FF6B6B'
         });
         return;
     }
@@ -51,33 +60,36 @@ document.getElementById('loginBtn').addEventListener('click', (e) => {
     const user = users.find(u => u.email === email && u.password === password);
 
     if (user) {
-        // Store logged in user
         localStorage.setItem('currentUser', JSON.stringify(user));
         
-        Swal.fire({
-            icon: 'success',
-            title: 'Success!',
-            text: 'Login successful!',
-            timer: 1000,
-            showConfirmButton: false
-        }).then(() => {
-            // Redirect to home page
+        try {
+            await Swal.fire({
+                icon: 'success',
+                title: 'Welcome Back!',
+                text: 'Login successful!',
+                timer: 1500,
+                showConfirmButton: false,
+                timerProgressBar: true
+            });
             window.location.href = 'index.html';
-        });
+        } catch (error) {
+            console.error('Redirect failed:', error);
+        }
     } else {
         Swal.fire({
             icon: 'error',
-            title: 'Error',
-            text: 'Invalid email or password'
+            title: 'Access Denied',
+            text: 'Invalid email or password',
+            confirmButtonColor: '#FF6B6B'
         });
     }
 });
 
 // Handle Signup
-document.getElementById('signupBtn').addEventListener('click', (e) => {
+document.getElementById('signupBtn').addEventListener('click', async (e) => {
     e.preventDefault();
-    const fullName = document.getElementById('fullName').value;
-    const email = document.getElementById('signupEmail').value;
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('signupEmail').value.trim();
     const password = document.getElementById('signupPassword').value;
     const confirmPassword = document.getElementById('signupConfirmPassword').value;
 
@@ -85,13 +97,32 @@ document.getElementById('signupBtn').addEventListener('click', (e) => {
     if (!fullName || !email || !password || !confirmPassword) {
         Swal.fire({
             icon: 'error',
-            title: 'Validation Error',
+            title: 'Error',
             text: 'Please fill in all fields',
-            confirmButtonText: 'OK',
-            confirmButtonColor: '#FF6B6B',
-            customClass: {
-                confirmButton: 'px-4 py-2 rounded-lg'
-            }
+            confirmButtonColor: '#FF6B6B'
+        });
+        return;
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Please enter a valid email address',
+            confirmButtonColor: '#FF6B6B'
+        });
+        return;
+    }
+
+    // Password validation
+    if (password.length < 6) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Password must be at least 6 characters long',
+            confirmButtonColor: '#FF6B6B'
         });
         return;
     }
@@ -101,10 +132,7 @@ document.getElementById('signupBtn').addEventListener('click', (e) => {
             icon: 'error',
             title: 'Error',
             text: 'Passwords do not match',
-            confirmButtonColor: '#FF6B6B',
-            customClass: {
-                confirmButton: 'px-4 py-2 rounded-lg'
-            }
+            confirmButtonColor: '#FF6B6B'
         });
         return;
     }
@@ -118,10 +146,7 @@ document.getElementById('signupBtn').addEventListener('click', (e) => {
             icon: 'error',
             title: 'Error',
             text: 'Email already registered',
-            confirmButtonColor: '#FF6B6B',
-            customClass: {
-                confirmButton: 'px-4 py-2 rounded-lg'
-            }
+            confirmButtonColor: '#FF6B6B'
         });
         return;
     }
@@ -135,16 +160,27 @@ document.getElementById('signupBtn').addEventListener('click', (e) => {
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
 
-    Swal.fire({
-        icon: 'success',
-        title: 'Success!',
-        text: 'Account created successfully!',
-        timer: 1500,
-        showConfirmButton: false
-    }).then(() => {
+    try {
+        await Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: 'Account created successfully!',
+            timer: 1500,
+            showConfirmButton: false,
+            timerProgressBar: true
+        });
+        
+        // Clear form fields
+        document.getElementById('fullName').value = '';
+        document.getElementById('signupEmail').value = '';
+        document.getElementById('signupPassword').value = '';
+        document.getElementById('signupConfirmPassword').value = '';
+        
         // Switch to login form
         showLogin();
-    });
+    } catch (error) {
+        console.error('Form switch failed:', error);
+    }
 });
 
 // Check if user is already logged in
@@ -155,85 +191,27 @@ window.addEventListener('load', () => {
     }
 });
 
-// Login form validation
-document.getElementById('loginBtn').addEventListener('click', function(e) {
-    e.preventDefault();
-    
-    const email = document.getElementById('loginEmail');
-    const password = document.getElementById('loginPassword');
-    const emailError = document.getElementById('emailError');
-    const passwordError = document.getElementById('passwordError');
-    
-    // Reset errors
-    emailError.classList.add('hidden');
-    passwordError.classList.add('hidden');
-    
-    let isValid = true;
-    
-    // Email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.value || !emailPattern.test(email.value)) {
-        emailError.classList.remove('hidden');
-        isValid = false;
-    }
-    
-    // Password validation
-    if (!password.value || password.value.length < 6) {
-        passwordError.classList.remove('hidden');
-        isValid = false;
-    }
-    
-    if (isValid) {
-        Swal.fire({
-            icon: 'success',
-            title: 'Success',
-            text: 'Validation passed successfully',
-        });
-    }
-});
-// Update signup form validation
-document.getElementById('signupBtn').addEventListener('click', function(e) {
-    e.preventDefault();
-    
-    const fullName = document.getElementById('fullName');
-    const email = document.getElementById('signupEmail');
-    const password = document.getElementById('signupPassword');
-    const confirmPassword = document.getElementById('signupConfirmPassword');
-    
-    // Reset all error messages
-    document.querySelectorAll('#signupForm .text-red-500').forEach(error => {
-        error.classList.add('hidden');
-    });
-    
-    let isValid = true;
-    
-    // Validate fields
-    if (!fullName.value.trim()) {
-        document.getElementById('fullNameError').classList.remove('hidden');
-        isValid = false;
-    }
-    
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.value || !emailPattern.test(email.value)) {
-        document.getElementById('signupEmailError').classList.remove('hidden');
-        isValid = false;
-    }
-    
-    if (!password.value || password.value.length < 6) {
-        document.getElementById('signupPasswordError').classList.remove('hidden');
-        isValid = false;
-    }
-    
-    if (password.value !== confirmPassword.value) {
-        document.getElementById('confirmPasswordError').classList.remove('hidden');
-        isValid = false;
-    }
-    
-    if (isValid) {
-        Swal.fire({
-            icon: 'success',
-            title: 'Success',
-            text: 'Account created successfully',
-        });
-    }
-});
+// Add password toggle functionality
+function setupPasswordToggles() {
+    const togglePassword = (inputId, toggleId) => {
+        const input = document.getElementById(inputId);
+        const toggle = document.getElementById(toggleId);
+        
+        if (input && toggle) {
+            toggle.addEventListener('click', () => {
+                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                input.setAttribute('type', type);
+                toggle.classList.toggle('ri-eye-line');
+                toggle.classList.toggle('ri-eye-off-line');
+            });
+        }
+    };
+
+    // Setup toggles for all password fields
+    togglePassword('loginPassword', 'toggleLoginPassword');
+    togglePassword('signupPassword', 'toggleSignupPassword');
+    togglePassword('signupConfirmPassword', 'toggleSignupConfirmPassword');
+}
+
+// Initialize password toggles
+document.addEventListener('DOMContentLoaded', setupPasswordToggles);
