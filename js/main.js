@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (carPhotosInput && imagePreview) {
         carPhotosInput.addEventListener('change', function(e) {
-            console.log('Car photos changed'); // Debug log
             imagePreview.innerHTML = ''; // Clear previous previews
             const files = Array.from(e.target.files).slice(0, 5); // Limit to 5 photos
             
@@ -133,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Initialize Slick Slider for brands
+// Initialize Slick Slider for brands using jquery
 $(document).ready(function(){
     $('.brands-slider').slick({
         dots: true,
