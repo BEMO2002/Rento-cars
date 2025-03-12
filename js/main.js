@@ -388,3 +388,44 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 });
+
+
+
+
+
+
+
+// Rental Car Popup Functions
+const offerPopup = document.getElementById('offer popup');
+
+// Open popup when clicking Rent A Car button
+document.getElementById('offer').addEventListener('click', (e) => {
+    e.preventDefault();
+    openOfferPopup();
+});
+
+function openOfferPopup() {
+    offerPopup.classList.remove('hidden');
+    offerPopup.classList.add('flex');
+    setTimeout(() => {
+        offerPopup.classList.add('opacity-100', 'translate-y-0');
+        offerPopup.classList.remove('opacity-0', '-translate-y-10');
+    }, 30);
+}
+
+function closeOfferPopup() {
+    offerPopup.classList.remove('opacity-100', 'translate-y-0');
+    offerPopup.classList.add('opacity-0', '-translate-y-10');
+    setTimeout(() => {
+        offerPopup.classList.add('hidden');
+        offerPopup.classList.remove('flex');
+    }, 500);
+}
+
+// Close popup when clicking outside
+offerPopup.addEventListener('click', (e) => {
+    if (e.target === offerPopup) {
+        closeOfferPopup();
+    }
+});
+
