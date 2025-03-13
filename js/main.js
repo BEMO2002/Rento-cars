@@ -20,8 +20,13 @@ closeBtn.addEventListener("click", () => {
 
 // switch between cars
 let img = document.querySelector(".img");
-function car(car){
-    img.src = car;
+
+function car(carSrc) {
+    img.classList.add("opacity-0");
+    setTimeout(() => {
+        img.src = carSrc;
+        img.classList.remove("opacity-0");
+    }, 300); // يساوي duration-300
 }
 
 
@@ -429,3 +434,19 @@ offerPopup.addEventListener('click', (e) => {
     }
 });
 
+
+
+//scroll reveal
+// start animation
+const sr = ScrollReveal({
+    origin : 'bottom',
+    distance : '60px',
+    duration : 2000,
+    delay : 300,
+    reset : true,
+})
+
+sr.reveal('.car-bottom' , {origin: 'bottom'});
+sr.reveal('.car-top' , {origin: 'top'});
+sr.reveal('.car-left' , {origin: 'left'});
+sr.reveal('.car-right' , {origin: 'right'});
