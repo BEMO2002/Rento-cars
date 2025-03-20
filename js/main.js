@@ -50,12 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     reader.onload = function(e) {
                         const img = document.createElement('img');
                         img.src = e.target.result;
-                        img.className = 'w-full h-40 object-cover rounded-lg';
+                        img.className = 'w-full h-50 object-cover rounded-md';
                         
                         const removeBtn = document.createElement('button');
                         removeBtn.type = 'button';
-                        removeBtn.className = 'absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center hover:bg-red-600';
-                        removeBtn.innerHTML = '×';
+                        removeBtn.className = 'absolute top-0 right-0 bg-red-600 text-white rounded w-[40px]  flex items-center justify-center hover:bg-red-700';
+                        removeBtn.innerHTML = 'x';
                         removeBtn.onclick = function() {
                             imgContainer.remove();
                         };
@@ -89,12 +89,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     const img = document.createElement('img');
                     img.src = e.target.result;
-                    img.className = 'w-full max-w-md h-40 object-cover rounded-lg';
+                    img.className = 'w-[200px] h-64 object-contain rounded-lg';
                     
                     const removeBtn = document.createElement('button');
                     removeBtn.type = 'button';
-                    removeBtn.className = 'absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center hover:bg-red-600';
-                    removeBtn.innerHTML = '×';
+                    removeBtn.className ='absolute top-0 left-0 bg-red-600 text-white rounded w-[40px] flex items-center justify-center hover:bg-red-700';
+                    removeBtn.innerHTML = 'x';
                     removeBtn.onclick = function() {
                         idCardPreview.innerHTML = '';
                         idCardInput.value = '';
@@ -237,25 +237,23 @@ rentalPopup.addEventListener('click', (e) => {
 
 // Handle form submission
 rentalForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Here you can add code to handle the form submission
-    // For example, sending data to a server
-    const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        }
-      });
-      Toast.fire({
-        icon: "success",
-        title: "successfully Booked"
-      });
-    closeRentalPopup();
+e.preventDefault();
+const Toast = Swal.mixin({
+toast: true,
+position: "top-end",
+showConfirmButton: false,
+timer: 3000,
+timerProgressBar: true,
+didOpen: (toast) => {
+toast.onmouseenter = Swal.stopTimer;
+toast.onmouseleave = Swal.resumeTimer;
+}
+});
+Toast.fire({
+icon: "success",
+title: "successfully Booked"
+});
+closeRentalPopup();
 });
 
 //mouse hover
@@ -286,7 +284,7 @@ window.addEventListener('load', () => {
     // Show user menu
     userMenu.classList.remove('hidden');
     loginBtn.classList.add('hidden');
-    userName.textContent = currentUser.fullName;
+    userName.textContent = currentUser.firstName;
 
     // Handle user menu dropdown
     userMenuBtn.addEventListener('click', () => {
@@ -330,73 +328,6 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     });
 });
-
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function(){
-    // Handle car photos preview
-    document.getElementById('carPhotos').addEventListener('change', function(e) {
-        const files = Array.from(e.target.files);
-        const imagePreview = document.getElementById('imagePreview');
-        imagePreview.innerHTML = '';
-
-        files.forEach(file => {
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.className = 'w-full h-32 object-cover rounded-lg';
-                    imagePreview.appendChild(img);
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-    });
-
-    // ID Card preview
-    const idCardInput = document.getElementById('idCard');
-    if (idCardInput) {
-        idCardInput.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            const preview = document.getElementById('idCardPreview');
-            preview.innerHTML = '';
-
-            if (file && file.type.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.className = 'max-w-md h-48 object-contain rounded-lg mt-4';
-                    preview.appendChild(img);
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-    }
-
-    // Form submission
-    document.getElementById('carRentalForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Add your form submission logic here
-        Swal.fire({
-            title: 'Success!',
-            text: 'Your car details have been submitted successfully.',
-            icon: 'success',
-            confirmButtonColor: '#1F2937'
-        });
-    });
-
-
-});
-
-
-
-
 
 
 
