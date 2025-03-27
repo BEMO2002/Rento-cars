@@ -1153,13 +1153,13 @@
 
     <div id="carDetailsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
         <div class="bg-white p-6 rounded-lg max-w-4xl w-full mx-4 relative contain">
-            <button onclick="closeCarModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <button onclick="closeCarModal()" class="absolute top-4 right-4 text-gray-500 hover:text-red-900">
                 <i class="ri-close-line text-2xl"></i>
             </button>
             <div class="flex flex-col md:flex-row gap-6">
                 <div class="md:w-1/2">
-                    <img id="modalCarImage" src="" alt="Car Image i" class="w-full h-auto rounded-lg">
-                    <div class="flex items-center  flex-row gap-2 mt-2">
+                    <img id="modalCarImage" src="" alt="Car Image i" class="w-full h-auto rounded-lg mt-7">
+                    <div class="flex items-center  flex-row gap-2 mt-10">
                         <img onclick="car(this.src); " src="Assets/rent/step (1).webp" alt=""
                         class="lg:w-[100px] w-[55px] rounded-xl cursor-pointer hover:scale-[1.2] duration-500">
                     <img onclick="car(this.src); " src="Assets/rent/step (2).webp" alt=""
@@ -1173,35 +1173,31 @@
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <h2 id="modalCarTitle" class="text-2xl font-bold text-gray-800 mb-4"></h2>
-                    <div id="modalCarDetails" class="space-y-4">
-                        <div class="flex items-center gap-2">
-                            <i class="ri-money-dollar-circle-line text-primary"></i>
+                    <h2 id="modalCarTitle" class="lg:text-2xl text-xl  font-bold text-gray-800 mb-4"></h2>
+                    <div id="modalCarDetails" class="space-y-4 ">
+                        <div class="grid grid-cols-2 items-center shadow-2xl border  p-1 lg:p-2 space-x-7 rounded-full">
+                            <i class="ri-money-dollar-circle-line  text-xl text-primary ml-5"></i>
                             <span id="modalCarPrice" class="font-semibold"></span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <i class="ri-speed-up-fill text-primary"></i>
+                        <div class="grid grid-cols-2 items-center shadow-2xl border  p-1 lg:p-2 space-x-7 rounded-full">
+                            <i class="ri-speed-up-fill  text-xl text-primary ml-5"></i>
                             <span id="modalCarMileage"></span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <i class="ri-calendar-line text-primary"></i>
-                            <span id="modalCarYear"></span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="ri-gas-station-fill text-primary"></i>
+                        <div class="grid grid-cols-2 items-center shadow-2xl border  p-1 lg:p-2 space-x-7 rounded-full">
+                            <i class="ri-gas-station-fill  text-xl text-primary ml-5"></i>
                             <span id="modalCarFuel"></span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <i class="ri-steering-2-fill text-primary"></i>
+                        <div class="grid grid-cols-2 items-center shadow-2xl border  p-1 lg:p-2 space-x-7 rounded-full">
+                            <i class="ri-steering-2-fill text-xl text-primary ml-5"></i>
                             <span id="modalCarTransmission"></span>
                         </div>
                     </div>
                     <div class="flex gap-4 mt-6">
-                        <button class="flex-1 bg-[#25D366] text-white px-4 py-3 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center gap-2">
+                        <button class="flex-1 bg-[#25D366] text-white lg:px-4 lg:py-3 px-2 py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center gap-2">
                             <i class="ri-whatsapp-line text-xl"></i>
                             WhatsApp
                         </button>
-                        <a href="" class="flex-1 bg-primary text-white px-4 py-3 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center gap-2">
+                        <a href="" class="flex-1 bg-primary text-white lg:px-4 lg:py-3 px-2 py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center gap-2">
                             <i class="ri-car-line text-xl"></i>
                             Rent now
                         </a>

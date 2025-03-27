@@ -7,7 +7,6 @@ document.querySelectorAll('.car').forEach(car => {
         const title = this.querySelector('h4').textContent;
         const price = this.querySelector('h3').textContent;
         const mileage = this.querySelector('.flex:has(.ri-speed-up-fill) p')?.textContent || '90,700 km';
-        const year = this.querySelector('.flex:has(.ri-calendar-line) p')?.textContent || '2022';
         const fuel = this.querySelector('.flex:has(.ri-gas-station-fill) span')?.textContent || 'Diesel';
         const transmission = this.querySelector('.flex:has(.ri-steering-2-fill) span')?.textContent || 'Automatic';
 
@@ -16,7 +15,6 @@ document.querySelectorAll('.car').forEach(car => {
         document.getElementById('modalCarTitle').textContent = title;
         document.getElementById('modalCarPrice').textContent = price;
         document.getElementById('modalCarMileage').textContent = mileage;
-        document.getElementById('modalCarYear').textContent = year;
         document.getElementById('modalCarFuel').textContent = fuel;
         document.getElementById('modalCarTransmission').textContent = transmission;
 

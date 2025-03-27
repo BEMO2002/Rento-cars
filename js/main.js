@@ -7,8 +7,9 @@ const arrowLeftClass = 'ri-roadster-fill';
 const arrowRightClass = 'ri-close-large-fill';
 
 closeBtn.addEventListener("click", () => {
-    if (mobileNav.style.left === "-300px" || mobileNav.style.left === "") {
+    if (mobileNav.style.left === "-300px" || mobileNav.style.left === "" || mobileNav.style.transition === "") {
         mobileNav.style.left = "0";
+        mobileNav.style.transition = "0.4s ease"
         closeBtnIcn.classList.toggle(arrowLeftClass);
         closeBtnIcn.classList.toggle(arrowRightClass);
     } else {
@@ -379,5 +380,3 @@ const sr = ScrollReveal({
 
 sr.reveal('.car-bottom' , {origin: 'bottom'});
 sr.reveal('.car-top' , {origin: 'top'});
-sr.reveal('.car-left' , {origin: 'left'});
-sr.reveal('.car-right' , {origin: 'right'});

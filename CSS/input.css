@@ -55,6 +55,7 @@ body{
 
 .view{
     left: -300px;
+    transition: 0.3s ease;
 }
 
 
@@ -68,8 +69,14 @@ body{
     background-size: cover;
     background-position: center;
 }
+.dash-container {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../Assets/Blog-Designs_instal-most.png');
+    background-size: cover;
+    background-position: center;
+}
 .form-container {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.818);
     backdrop-filter: blur(10px);
 }
 
